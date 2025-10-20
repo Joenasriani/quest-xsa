@@ -69,22 +69,17 @@
             color: #8a6d3b;
         }
 
-        /* Task 3: Responsive Overview Tables */
-        .overview-tables {
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-        }
-        
+        /* Responsive Table Wrapper */
         .table-wrapper {
-            overflow-x: auto; /* Ensures table scrolls horizontally on small screens */
+            overflow-x: auto; /* This is the key fix for responsiveness */
+            margin-bottom: 20px;
         }
 
         table {
             width: 100%;
             border-collapse: collapse;
-            margin-bottom: 10px;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+            min-width: 400px; /* Prevents table from becoming too narrow */
         }
 
         th, td {
@@ -100,7 +95,7 @@
             font-size: 1.2em;
         }
 
-        /* Task 2: Component Image Grid */
+        /* Component Image Grid */
         .component-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -132,7 +127,7 @@
             background: #f9f9f9;
         }
 
-        /* Task 4: Step-by-Step Guide */
+        /* Step-by-Step Guide */
         .step-by-step {
             margin-top: 20px;
         }
@@ -141,7 +136,7 @@
             margin-bottom: 30px;
         }
 
-        /* Task 5: Footer */
+        /* Footer */
         footer {
             text-align: center;
             margin-top: 40px;
@@ -178,82 +173,107 @@
         </p>
 
         <h2>Project Overview (Quick Guide)</h2>
-        <div class="overview-tables">
-            <div class="table-wrapper">
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Page 1: Hardware & Components</th>
-                            <th>Page 2: Physical Assembly</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>
-                                <ul>
-                                    <li>Meta Quest 2/3/Pro</li>
-                                    <li>FLIR Lepton 3.x Module</li>
-                                    <li>Lepton Breakout Board (e.g., Pure Thermal 3)</li>
-                                    <li>UVC-compatible UV Camera</li>
-                                    <li>High-power UV LED Flashlight</li>
-                                    <li>USB-C Hub (Powered)</li>
-                                    <li>3D Printer & Filament</li>
-                                    <li>Misc. wires, bolts, soldering iron</li>
-                                </ul>
-                            </td>
-                            <td>
-                                <ol>
-                                    <li>Design/Download 3D printed mount.</li>
-                                    <li>Print the mount.</li>
-                                    <li>Solder Lepton to breakout board (if needed).</li>
-                                    <li>Securely mount all components (Lepton, UV Cam, UV Light) to the 3D print.</li>
-                                    <li>Attach the entire assembly to the Meta Quest.</li>
-                                    <li>Manage wiring to the USB-C hub.</li>
-                                    <li>Connect the hub to the Quest's USB-C port.</li>
-                                </ol>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
 
-            <div class="table-wrapper">
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Page 3: Software Environment Setup</th>
-                            <th>Page 4: Application Development & Deployment</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>
-                                <ol>
-                                    <li>Enable Developer Mode on Quest.</li>
-                                    <li>Install Unity Hub & Unity (LTS version recommended).</li>
-                                    <li>Add Android Build Support module to Unity.</li>
-                                    <li>Install Meta XR SDK (via Package Manager).</li>
-                                    <li>Install SideQuest or ADB for sideloading.</li>
-                                    <li>Configure Unity Project (Switch to Android, XR Plugin Mgmt).</li>
-                                </ol>
-                            </td>
-                            <td>
-                                <ol>
-                                    <li>Create Unity scene with <code>OVRCameraRig</code>.</li>
-                                    <li>Enable Passthrough (<code>OVRManager</code> & <code>OVRPassthroughLayer</code>).</li>
-                                    <li>Import a UVC (USB Video Class) plugin from the Unity Asset Store.</li>
-                                    <li>Write C# script to detect and initialize camera feeds.</li>
-                                    <li>Render camera feeds to <code>RenderTexture</code>s.</li>
-                                    <li>Display textures on <code>Quad</code> objects parented to the camera.</li>
-                                    <li>Add controller logic (<code>OVRInput</code>) to toggle feeds.</li>
-                                    <li>Build <code>.apk</code> file and sideload to Quest.</li>
-                                    <li>Test and debug.</li>
-                                </ol>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
+        <div class="table-wrapper">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Page 1: Hardware & Components</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            <ul>
+                                <li>Meta Quest 2/3/Pro</li>
+                                <li>FLIR Lepton 3.x Module</li>
+                                <li>Lepton Breakout Board (e.g., Pure Thermal 3)</li>
+                                <li>UVC-compatible UV Camera</li>
+                                <li>High-power UV LED Flashlight</li>
+                                <li>USB-C Hub (Powered)</li>
+                                <li>3D Printer & Filament</li>
+                                <li>Misc. wires, bolts, soldering iron</li>
+                            </ul>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="table-wrapper">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Page 2: Physical Assembly</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            <ol>
+                                <li>Design/Download 3D printed mount.</li>
+                                <li>Print the mount.</li>
+                                <li>Solder Lepton to breakout board (if needed).</li>
+                                <li>Securely mount all components (Lepton, UV Cam, UV Light) to the 3D print.</li>
+                                <li>Attach the entire assembly to the Meta Quest.</li>
+                                <li>Manage wiring to the USB-C hub.</li>
+                                <li>Connect the hub to the Quest's USB-C port.</li>
+                            </ol>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="table-wrapper">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Page 3: Software Environment Setup</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            <ol>
+                                <li>Enable Developer Mode on Quest.</li>
+                                <li>Install Unity Hub & Unity (LTS version recommended).</li>
+                                <li>Add Android Build Support module to Unity.</li>
+                                <li>Install Meta XR SDK (via Package Manager).</li>
+                                <li>Install SideQuest or ADB for sideloading.</li>
+                                <li>Configure Unity Project (Switch to Android, XR Plugin Mgmt).</li>
+                            </ol>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="table-wrapper">
+             <table>
+                <thead>
+                    <tr>
+                        <th>Page 4: Application Development & Deployment</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            <ol>
+                                <li>Create Unity scene with <code>OVRCameraRig</code>.</li>
+                                <li>Enable Passthrough (<code>OVRManager</code> & <code>OVRPassthroughLayer</code>).</li>
+                                <li>Import a UVC (USB Video Class) plugin from the Unity Asset Store.</li>
+                                <li>Write C# script to detect and initialize camera feeds.</li>
+                                <li>Render camera feeds to <code>RenderTexture</code>s.</li>
+                                <li>Display textures on <code>Quad</code> objects parented to the camera.</li>
+                                <li>Add controller logic (<code>OVRInput</code>) to toggle feeds.</li>
+                                <li>Build <code>.apk</code> file and sideload to Quest.</li>
+                                <li>Test and debug.</li>
+                            </ol>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
 
         <h2>Tools & Components</h2>
