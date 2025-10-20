@@ -79,5 +79,7 @@ Contributions are welcome. Please fork the repository and submit a pull request.
 
 LICENSE
 
-A Research Project by Joe Nasr
+A Research Project by @QuestReQuestVR
+https://linktr.ee/questrequestvr
+(Joe Nasr) KY
 
