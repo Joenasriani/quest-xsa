@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced Sensory Augmentation on Meta Quest 3: The Complete Guide</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #ffffff;
+            color: #1f2937; /* text-gray-800 */
+        }
+        .hero-bg {
+            background-color: #f9fafb; /* gray-50 */
+            background-image: radial-gradient(#d1d5db 1px, transparent 1px);
+            background-size: 20px 20px;
+        }
+        .card {
+            background-color: rgba(255, 255, 255, 0.8);
+            border: 1px solid #e5e7eb; /* border-gray-200 */
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+        }
+        .mindmap-node {
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        .mindmap-node:hover {
+            transform: scale(1.05);
+            filter: drop-shadow(0 0 15px rgba(37, 99, 235, 0.3));
+        }
+        .mindmap-line {
+            transition: all 0.3s ease;
+        }
+        .mindmap-node:hover ~ .mindmap-line,
+        .mindmap-node:hover ~ g .mindmap-line {
+            stroke: #2563eb; /* blue-600 */
+        }
+        .tab-button {
+            transition: all 0.2s ease-in-out;
+            color: #4b5563; /* text-gray-600 */
+        }
+        .tab-button.active {
+            background-color: #2563eb; /* blue-600 */
+            color: #ffffff;
+        }
+        .conic-gradient-chart {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            background: conic-gradient(
+                #10b981 0% 48.6%,
+                #34d399 48.6% 76.4%,
+                #6ee7b7 76.4% 90.3%,
+                #a7f3d0 90.3% 100%
+            );
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- Hero Section -->
+    <header class="hero-bg text-center py-20 px-4 sm:px-6 lg:px-8 border-b border-gray-200">
+        <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight text-gray-900">Advanced Sensory Augmentation</h1>
+        <p class="mt-4 max-w-3xl mx-auto text-lg md:text-xl text-gray-600">The Complete Developer's Guide to Building Animal Vision on the Meta Quest 3</p>
+    </header>
+
+    <main class="container mx-auto px-4 sm:px-6 lg:px-8 py-16 space-y-24">
+        
+        <!-- PART 1: CONCEPT & COMPONENTS -->
+        <div class="space-y-24">
+            <div class="text-center">
+                <h2 class="text-base font-semibold text-blue-600 tracking-wider uppercase">Part 1</h2>
+                <p class="mt-2 text-3xl font-extrabold text-gray-900 tracking-tight sm:text-4xl">The Concept & Components</p>
+            </div>
+
+            <!-- Section: Project Blueprint -->
+            <section id="blueprint">
+                <h2 class="text-3xl font-bold text-center mb-4 text-gray-900">Project Blueprint: An Interactive Overview</h2>
+                <p class="text-center text-gray-500 max-w-2xl mx-auto mb-12">This diagram provides a complete overview of the project. Click on any node to navigate directly to the detailed section.</p>
+                <div class="w-full flex justify-center items-center">
+                    <svg viewBox="0 0 800 500" class="w-full max-w-4xl">
+                        <!-- Lines -->
+                        <line class="mindmap-line" x1="400" y1="90" x2="150" y2="200" stroke="#9ca3af" stroke-width="2"/>
+                        <line class="mindmap-line" x1="400" y1="90" x2="400" y2="200" stroke="#9ca3af" stroke-width="2"/>
+                        <line class="mindmap-line" x1="400" y1="90" x2="650" y2="200" stroke="#9ca3af" stroke-width="2"/>
+                        <line class="mindmap-line" x1="150" y1="280" x2="150" y2="380" stroke="#9ca3af" stroke-width="2"/>
+                        <line class="mindmap-line" x1="400" y1="280" x2="400" y2="380" stroke="#9ca3af" stroke-width="2"/>
+                        <line class="mindmap-line" x1="650" y1="280" x2="650" y2="380" stroke="#9ca3af" stroke-width="2"/>
+
+                        <!-- Nodes -->
+                        <g class="mindmap-node" onclick="document.getElementById('vision').scrollIntoView();">
+                            <rect x="300" y="40" width="200" height="100" rx="15" fill="#f9fafb" stroke="#2563eb" stroke-width="2"/>
+                            <text x="400" y="85" font-size="16" fill="#111827" text-anchor="middle" font-weight="bold">The Vision</text>
+                            <text x="400" y="110" font-size="12" fill="#4b5563" text-anchor="middle">Project Goal & Concept</text>
+                        </g>
+                        <g class="mindmap-node" onclick="document.getElementById('toolkit').scrollIntoView();">
+                            <rect x="50" y="190" width="200" height="100" rx="15" fill="#f9fafb" stroke="#9ca3af" stroke-width="2"/>
+                            <text x="150" y="235" font-size="16" fill="#111827" text-anchor="middle" font-weight="bold">The Toolkit</text>
+                            <text x="150" y="260" font-size="12" fill="#4b5563" text-anchor="middle">Hardware Breakdown</text>
+                        </g>
+                         <g class="mindmap-node" onclick="document.getElementById('build-process').scrollIntoView();">
+                            <rect x="300" y="190" width="200" height="100" rx="15" fill="#f9fafb" stroke="#9ca3af" stroke-width="2"/>
+                            <text x="400" y="235" font-size="16" fill="#111827" text-anchor="middle" font-weight="bold">The Build Process</text>
+                            <text x="400" y="260" font-size="12" fill="#4b5563" text-anchor="middle">Step-by-Step Guide</text>
+                        </g>
+                        <g class="mindmap-node" onclick="document.getElementById('deep-dive').scrollIntoView();">
+                            <rect x="550" y="190" width="200" height="100" rx="15" fill="#f9fafb" stroke="#9ca3af" stroke-width="2"/>
+                            <text x="650" y="235" font-size="16" fill="#111827" text-anchor="middle" font-weight="bold">Technical Deep Dive</text>
+                            <text x="650" y="260" font-size="12" fill="#4b5563" text-anchor="middle">Core Theory & Logic</text>
+                        </g>
+                        <g class="mindmap-node" onclick="document.getElementById('deep-dive').scrollIntoView();">
+                            <rect x="50" y="370" width="200" height="100" rx="15" fill="#f9fafb" stroke="#9ca3af" stroke-width="2"/>
+                            <text x="150" y="415" font-size="16" fill="#111827" text-anchor="middle" font-weight="bold">Native Plugin</text>
+                            <text x="150" y="440" font-size="12" fill="#4b5563" text-anchor="middle">Hardware-Software Bridge</text>
+                        </g>
+                        <g class="mindmap-node" onclick="document.getElementById('deep-dive').scrollIntoView();">
+                            <rect x="300" y="370" width="200" height="100" rx="15" fill="#f9fafb" stroke="#9ca3af" stroke-width="2"/>
+                            <text x="400" y="415" font-size="16" fill="#111827" text-anchor="middle" font-weight="bold">Custom Shaders</text>
+                            <text x="400" y="440" font-size="12" fill="#4b5563" text-anchor="middle">Visual Transformation</text>
+                        </g>
+                         <g class="mindmap-node" onclick="document.getElementById('deep-dive').scrollIntoView();">
+                            <rect x="550" y="370" width="200" height="100" rx="15" fill="#f9fafb" stroke="#9ca3af" stroke-width="2"/>
+                            <text x="650" y="415" font-size="16" fill="#111827" text-anchor="middle" font-weight="bold">VR Optimization</text>
+                            <text x="650" y="440" font-size="12" fill="#4b5563" text-anchor="middle">Performance Mandate</text>
+                        </g>
+                    </svg>
+                </div>
+            </section>
+
+            <!-- Section 1: The Vision -->
+            <section id="vision">
+                <div class="card rounded-2xl p-8 md:p-12 shadow-lg">
+                    <h2 class="text-3xl font-bold text-gray-900 mb-4">1. The Vision Behind Augmented Senses</h2>
+                    <p class="text-gray-700 leading-relaxed">
+                        Imagine seeing the world through the eyes of a pit viper, sensing the heat radiating from objects, or experiencing the vibrant, hidden patterns only visible in ultraviolet light, much like a bee. This project aims to transform the Meta Quest 3 into a device capable of precisely that: augmenting human perception with simulated animal senses using external thermal and UV cameras.
+                        <br><br>
+                        This guide provides a step-by-step blueprint, blending theoretical explanations with practical implementation details, to develop a sophisticated mixed reality application. You will learn how to bridge external hardware with the virtual world, process specialized sensor data in real-time using custom shaders, and control the experience with an intuitive in-world user interface.
+                    </p>
+                </div>
+            </section>
+
+            <!-- Section 2: The Toolkit -->
+            <section id="toolkit">
+                <h2 class="text-3xl font-bold text-center mb-12 text-gray-900">2. The Toolkit: Hardware You'll Need</h2>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Meta Quest 3 -->
+                    <div class="card rounded-2xl p-6 text-center shadow-md">
+                        <img src="https://placehold.co/1920x1080/e5e7eb/374151?text=Meta+Quest+3" alt="Meta Quest 3" class="rounded-lg mx-auto mb-4 aspect-video w-full object-cover">
+                        <h3 class="text-xl font-bold">Meta Quest 3 Headset</h3>
+                        <p class="text-gray-600 text-sm my-2">The primary mixed reality platform for the application.</p>
+                        <p class="text-2xl font-black text-blue-600">~1,835 AED</p>
+                    </div>
+                    <!-- Thermal Camera -->
+                    <div class="card rounded-2xl p-6 text-center shadow-md">
+                        <img src="https://placehold.co/1920x1080/e5e7eb/374151?text=FLIR+Lepton+3.5" alt="FLIR Lepton 3.5" class="rounded-lg mx-auto mb-4 aspect-video w-full object-cover">
+                        <h3 class="text-xl font-bold">Thermal Camera Module</h3>
+                        <p class="text-gray-600 text-sm my-2">Captures radiometric infrared data. (FLIR Lepton 3.5)</p>
+                        <p class="text-2xl font-black text-blue-600">~605 AED</p>
+                    </div>
+                    <!-- Breakout Board -->
+                    <div class="card rounded-2xl p-6 text-center shadow-md">
+                         <img src="https://placehold.co/1920x1080/e5e7eb/374151?text=Lepton+Breakout" alt="Lepton Breakout Board" class="rounded-lg mx-auto mb-4 aspect-video w-full object-cover">
+                        <h3 class="text-xl font-bold">Lepton Breakout Board</h3>
+                        <p class="text-gray-600 text-sm my-2">Essential for interfacing the thermal module via USB.</p>
+                        <p class="text-2xl font-black text-blue-600">~245 AED</p>
+                    </div>
+                    <!-- UV Camera -->
+                    <div class="card rounded-2xl p-6 text-center shadow-md">
+                        <img src="https://placehold.co/1920x1080/e5e7eb/374151?text=X-Nite+UV+Camera" alt="X-Nite UV Camera" class="rounded-lg mx-auto mb-4 aspect-video w-full object-cover">
+                        <h3 class="text-xl font-bold">UV Camera Module</h3>
+                        <p class="text-gray-600 text-sm my-2">UVC-compliant for driverless Android compatibility.</p>
+                        <p class="text-2xl font-black text-blue-600">~550 AED</p>
+                    </div>
+                    <!-- UV Flashlight -->
+                    <div class="card rounded-2xl p-6 text-center shadow-md">
+                        <img src="https://placehold.co/1920x1080/e5e7eb/374151?text=365nm+UV+Flashlight" alt="365nm UV Flashlight" class="rounded-lg mx-auto mb-4 aspect-video w-full object-cover">
+                        <h3 class="text-xl font-bold">365nm UV Flashlight</h3>
+                        <p class="text-gray-600 text-sm my-2">Illuminates surfaces to reveal UV fluorescence patterns.</p>
+                        <p class="text-2xl font-black text-blue-600">~220 AED</p>
+                    </div>
+                    <!-- USB Hub -->
+                    <div class="card rounded-2xl p-6 text-center shadow-md">
+                        <img src="https://placehold.co/1920x1080/e5e7eb/374151?text=Powered+USB-C+Hub" alt="Powered USB-C Hub" class="rounded-lg mx-auto mb-4 aspect-video w-full object-cover">
+                        <h3 class="text-xl font-bold">Powered USB-C Hub</h3>
+                        <p class="text-gray-600 text-sm my-2">Connects cameras and charges the headset simultaneously.</p>
+                        <p class="text-2xl font-black text-blue-600">~275 AED</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- DIVIDER -->
+        <hr class="border-gray-200">
+
+        <!-- PART 2: THE IMPLEMENTATION -->
+        <div class="space-y-24">
+            <div class="text-center">
+                <h2 class="text-base font-semibold text-cyan-600 tracking-wider uppercase">Part 2</h2>
+                <p class="mt-2 text-3xl font-extrabold text-gray-900 tracking-tight sm:text-4xl">The Implementation</p>
+            </div>
+
+            <!-- Section 3: The Build Process -->
+            <section id="build-process">
+                 <h2 class="text-3xl font-bold text-center mb-12 text-gray-900">3. The Build Process: A Step-by-Step Guide</h2>
+                 <div class="card rounded-2xl p-8 md:p-12 shadow-lg">
+                     <div class="flex flex-col md:flex-row">
+                        <!-- Tabs -->
+                        <div id="tabs-container" class="md:w-1/4 flex md:flex-col border-b-2 md:border-b-0 md:border-r-2 border-gray-200 mb-8 md:mb-0 md:pr-8">
+                            <button class="tab-button w-full text-left p-4 rounded-md font-semibold active" onclick="openTab(event, 'tab1')">Phase 1: Setup</button>
+                            <button class="tab-button w-full text-left p-4 rounded-md font-semibold" onclick="openTab(event, 'tab2')">Phase 2: Unity Project</button>
+                            <button class="tab-button w-full text-left p-4 rounded-md font-semibold" onclick="openTab(event, 'tab3')">Phase 3: UI & Interaction</button>
+                            <button class="tab-button w-full text-left p-4 rounded-md font-semibold" onclick="openTab(event, 'tab4')">Phase 4: Deployment</button>
+                        </div>
+                        <!-- Tab Content -->
+                        <div class="md:w-3/4 md:pl-8">
+                            <div id="tab1" class="tab-content">
+                                <h3 class="text-2xl font-bold mb-4 text-gray-900">Phase 1: Environment & Headset Setup</h3>
+                                <div class="space-y-4 text-gray-700">
+                                    <p><strong>1. Install Unity Hub & Editor:</strong> Use Unity Hub to install a recent LTS version (e.g., 6.1) and add the 'Android Build Support' module.</p>
+                                    <p><strong>2. Enable Developer Mode on Quest 3:</strong> Register as a Meta developer, then use the Meta Horizon mobile app to enable Developer Mode on your headset.</p>
+                                    <p><strong>3. Connect & Authorize:</strong> Connect the headset to your PC via USB-C and accept the "Allow USB debugging" prompt inside the headset.</p>
+                                </div>
+                            </div>
+                            <div id="tab2" class="tab-content" style="display:none;">
+                                <h3 class="text-2xl font-bold mb-4 text-gray-900">Phase 2: Unity Project & Passthrough Scene</h3>
+                                 <div class="space-y-4 text-gray-700">
+                                    <p><strong>1. Create a 3D (URP) Project:</strong> This ensures your project uses the modern, performant Universal Render Pipeline.</p>
+                                    <p><strong>2. Import Meta XR SDKs:</strong> From the Package Manager, import the 'Meta XR Core SDK' and 'Meta XR Interaction SDK' from your assets.</p>
+                                    <p><strong>3. Configure with Project Setup Tool:</strong> Run the tool via `Meta XR > Tools` and click 'Fix All' and 'Apply All' to automatically configure project settings for Meta Quest.</p>
+                                    <p><strong>4. Build the Passthrough Scene:</strong> Create a new scene, add the `OVRCameraRig` prefab, enable `Passthrough Support` in the OVR Manager, and set the `CenterEyeAnchor` camera's background to be transparent (RGBA: 0,0,0,0).</p>
+                                </div>
+                            </div>
+                            <div id="tab3" class="tab-content" style="display:none;">
+                                <h3 class="text-2xl font-bold mb-4 text-gray-900">Phase 3: UI & Interaction</h3>
+                                 <div class="space-y-4 text-gray-700">
+                                    <p><strong>1. Design a World-Space UI:</strong> Use UI Toolkit to create a UXML document with buttons for each vision mode. Render this UI to a 3D Quad in your scene.</p>
+                                    <p><strong>2. Script the VisionManager:</strong> Create a central C# script to manage state (which vision mode is active) and handle the logic for enabling/disabling camera streams and shaders.</p>
+                                    <p><strong>3. Integrate Controller Input:</strong> Use the Meta XR Interaction SDK's Ray Interactor to allow users to point and click on the UI buttons, linking these clicks to call functions in your VisionManager.</p>
+                                </div>
+                            </div>
+                             <div id="tab4" class="tab-content" style="display:none;">
+                                <h3 class="text-2xl font-bold mb-4 text-gray-900">Phase 4: Build & Deployment</h3>
+                                 <div class="space-y-4 text-gray-700">
+                                    <p><strong>1. Configure Build Settings:</strong> Go to `File > Build Settings`, ensure the platform is Android, and set Texture Compression to 'ASTC'.</p>
+                                    <p><strong>2. Build the APK:</strong> Click 'Build and Run' to compile, build, and deploy the application directly to your connected Quest 3.</p>
+                                    <p><strong>3. Sideload and Test:</strong> The app will be installed and can be found in the headset's App Library under the "Unknown Sources" filter. Test all functionalities thoroughly.</p>
+                                </div>
+                            </div>
+                        </div>
+                     </div>
+                 </div>
+            </section>
+
+            <!-- Section 4: Technical Deep Dive -->
+            <section id="deep-dive">
+                <h2 class="text-3xl font-bold text-center mb-12 text-gray-900">4. The Technical Deep Dive: Core Theory & Logic</h2>
+                <div class="space-y-8">
+                     <!-- Native Plugin -->
+                    <div class="card rounded-2xl p-8 md:p-12 shadow-lg">
+                        <h3 class="text-2xl font-bold mb-4 text-gray-900">The Core Bridge: Native Plugin Architecture</h3>
+                        <p class="text-gray-600 mb-6">The native Android plugin is the project's most critical component, acting as the high-performance bridge between the physical cameras and the Unity rendering engine.</p>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                            <div>
+                                <h4 class="font-bold text-xl mb-2 text-cyan-600">The Expert Method (GPU Texture Pointers)</h4>
+                                <p class="text-gray-700">The optimal solution is to keep video data on the GPU at all times. The C++/NDK layer of the plugin decodes the video stream directly into a native OpenGL texture. Only the small, integer-based Texture ID (pointer) is passed to Unity. Unity then uses `Texture2D.CreateExternalTexture()` to reference this existing GPU data, completely eliminating slow CPU-to-GPU memory copies.</p>
+                            </div>
+                            <div>
+                                 <div class="bg-gray-50 border border-gray-200 rounded-xl p-6">
+                                    <h2 class="text-xl font-bold text-gray-800 mb-4">VR Performance Comparison</h2>
+                                    <div class="flex-grow flex flex-col justify-around space-y-4">
+                                        <div>
+                                            <div class="flex justify-between items-end mb-1">
+                                                <h3 class="font-semibold text-red-600">Inefficient (CPU)</h3>
+                                                <span class="text-lg font-bold text-red-600">~25 FPS</span>
+                                            </div>
+                                            <div class="w-full bg-gray-200 rounded-full h-4"><div class="bg-red-500 h-4 rounded-full" style="width: 35%"></div></div>
+                                        </div>
+                                        <div>
+                                            <div class="flex justify-between items-end mb-1">
+                                                <h3 class="font-semibold text-green-600">Expert (GPU)</h3>
+                                                <span class="text-lg font-bold text-green-600">72+ FPS</span>
+                                            </div>
+                                            <div class="w-full bg-gray-200 rounded-full h-4"><div class="bg-green-500 h-4 rounded-full" style="width: 100%"></div></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Custom Shaders -->
+                    <div class="card rounded-2xl p-8 md:p-12 shadow-lg">
+                         <h3 class="text-2xl font-bold text-gray-900 mb-6">The Art of Illusion: Custom Shader Techniques</h3>
+                         <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                            <div class="bg-white p-6 rounded-lg border border-gray-200">
+                                <h4 class="font-bold text-amber-600 text-xl">Thermal Vision</h4>
+                                <p class="text-sm text-gray-600 mt-2">Maps grayscale heat intensity to a color gradient (LUT) for an intuitive heat-map view.</p>
+                                <div class="w-full h-3 rounded-full mt-4 bg-gradient-to-r from-blue-600 via-red-500 to-yellow-300"></div>
+                            </div>
+                            <div class="bg-white p-6 rounded-lg border border-gray-200">
+                                <h4 class="font-bold text-violet-600 text-xl">UV Vision</h4>
+                                <p class="text-sm text-gray-600 mt-2">Applies high contrast and a false-color glow to reveal patterns invisible to the human eye.</p>
+                                <div class="w-full h-12 rounded-lg mt-4 flex items-center justify-center bg-gray-100">
+                                     <span class="font-black text-3xl text-violet-600" style="text-shadow: 0 0 15px #c4b5fd;">FLUORESCENCE</span>
+                                </div>
+                            </div>
+                            <div class="bg-white p-6 rounded-lg border border-gray-200">
+                                <h4 class="font-bold text-lime-600 text-xl">Acuity Vision</h4>
+                                <p class="text-sm text-gray-600 mt-2">Uses a 3x3 convolution kernel to sharpen the image in real-time by enhancing edges.</p>
+                                 <div class="w-24 h-24 mx-auto mt-2 grid grid-cols-3 gap-1 text-center font-mono text-sm">
+                                   <div class="bg-gray-200 text-gray-800 flex items-center justify-center rounded">0</div>
+                                   <div class="bg-red-200 text-red-800 flex items-center justify-center rounded">-1</div>
+                                   <div class="bg-gray-200 text-gray-800 flex items-center justify-center rounded">0</div>
+                                   <div class="bg-red-200 text-red-800 flex items-center justify-center rounded">-1</div>
+                                   <div class="bg-lime-300 text-lime-900 flex items-center justify-center rounded font-bold text-xl">5</div>
+                                   <div class="bg-red-200 text-red-800 flex items-center justify-center rounded">-1</div>
+                                   <div class="bg-gray-200 text-gray-800 flex items-center justify-center rounded">0</div>
+                                   <div class="bg-red-200 text-red-800 flex items-center justify-center rounded">-1</div>
+                                   <div class="bg-gray-200 text-gray-800 flex items-center justify-center rounded">0</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- VR Optimization -->
+                    <div class="card rounded-2xl p-8 md:p-12 shadow-lg">
+                         <h3 class="text-2xl font-bold mb-4 text-gray-900">The Performance Mandate: VR Optimization</h3>
+                         <p class="text-gray-600 mb-6">A consistent 72+ FPS is non-negotiable for a comfortable VR experience. Layering optimizations is essential.</p>
+                         <div class="flex flex-col md:flex-row items-center justify-center gap-8">
+                             <div class="relative">
+                                <div class="conic-gradient-chart"></div>
+                                <div class="absolute inset-0 flex items-center justify-center">
+                                    <div class="bg-gray-100 border-4 border-white w-28 h-28 rounded-full flex items-center justify-center">
+                                        <span class="text-3xl font-bold text-gray-900">72<span class="text-base font-normal ml-1">FPS</span></span>
+                                    </div>
+                                </div>
+                             </div>
+                             <div class="space-y-3">
+                                 <h4 class="font-bold text-xl text-gray-900">Path to 72 FPS:</h4>
+                                 <div class="text-md space-y-2 text-left text-gray-700">
+                                     <div class="flex items-center"><div class="w-4 h-4 rounded-full bg-[#10b981] mr-3"></div><span>~35 FPS (Baseline Unoptimized)</span></div>
+                                     <div class="flex items-center"><div class="w-4 h-4 rounded-full bg-[#34d399] mr-3"></div><span>+20 FPS from Fixed Foveated Rendering (FFR)</span></div>
+                                     <div class="flex items-center"><div class="w-4 h-4 rounded-full bg-[#6ee7b7] mr-3"></div><span>+10 FPS from Shader Optimization</span></div>
+                                     <div class="flex items-center"><div class="w-4 h-4 rounded-full bg-[#a7f3d0] mr-3"></div><span>+7 FPS from Static Batching & Culling</span></div>
+                                 </div>
+                             </div>
+                         </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Section 5: Conclusion & Future Horizons -->
+            <section id="conclusion">
+                <h2 class="text-3xl font-bold text-center mb-12 text-gray-900">5. Conclusion & Future Horizons</h2>
+                <div class="card rounded-2xl p-8 md:p-12 shadow-lg space-y-8">
+                    <div>
+                        <h3 class="text-2xl font-bold text-gray-900 mb-4">Why Build This? The Core Purpose</h3>
+                        <p class="text-gray-700 leading-relaxed">This project transcends a simple tech demo; it's an exploration into the future of human-computer interaction and perception. By integrating external sensors with mixed reality, we unlock the ability to visualize and interact with data streams that are normally invisible. This technology serves as a powerful platform for education, professional training, scientific research, and even artistic expression, fundamentally changing how we perceive and understand the world around us.</p>
+                    </div>
+
+                    <div>
+                        <h3 class="text-2xl font-bold text-gray-900 mb-4">Real-World Scenarios & Applications</h3>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div class="bg-gray-50 p-6 rounded-lg border border-gray-200">
+                                <h4 class="font-bold text-lg text-blue-600">Industrial & Safety Inspections</h4>
+                                <p class="text-gray-600 mt-2 text-sm">An HVAC technician uses thermal vision to instantly see heat leaks in insulation or faulty electrical connections in a complex panel, overlaying the heat map directly onto their real-world view. This allows for faster, more accurate diagnostics and preventative maintenance.</p>
+                            </div>
+                            <div class="bg-gray-50 p-6 rounded-lg border border-gray-200">
+                                <h4 class="font-bold text-lg text-blue-600">Scientific & Environmental Field Research</h4>
+                                <p class="text-gray-600 mt-2 text-sm">A biologist studying pollination uses UV vision to see the "nectar guide" patterns on flowers exactly as a bee would, gaining unprecedented insight into animal behavior. A wildlife researcher could use thermal vision at night to conduct population counts of nocturnal animals non-invasively.</p>
+                            </div>
+                            <div class="bg-gray-50 p-6 rounded-lg border border-gray-200">
+                                <h4 class="font-bold text-lg text-blue-600">Emergency Response & Search and Rescue</h4>
+                                <p class="text-gray-600 mt-2 text-sm">A firefighter navigates a smoke-filled room by switching to thermal vision, allowing them to locate survivors or identify structural hotspots. This hands-free, integrated visualization is faster and safer than using separate handheld devices.</p>
+                            </div>
+                            <div class="bg-gray-50 p-6 rounded-lg border border-gray-200">
+                                <h4 class="font-bold text-lg text-blue-600">Artistic & Experiential Installations</h4>
+                                <p class="text-gray-600 mt-2 text-sm">An artist creates an interactive museum exhibit where visitors can wear the headset and see hidden UV patterns painted on sculptures, or experience a room's "emotional temperature" through a dynamic, real-time heat map, creating a new medium for storytelling.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section 6: Resources -->
+            <section id="resources">
+                <h2 class="text-3xl font-bold text-center mb-12 text-gray-900">6. Additional Resources & Visual Demo</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div class="card rounded-2xl p-8 shadow-md">
+                        <h3 class="font-bold text-xl mb-4 text-gray-900">Official Documentation</h3>
+                        <ul class="space-y-3">
+                            <li><a href="https://developers.meta.com/horizon/documentation/" target="_blank" class="text-blue-600 hover:text-blue-500">Meta Horizon OS Developers Docs →</a></li>
+                            <li><a href="https://learn.unity.com/" target="_blank" class="text-blue-600 hover:text-blue-500">Unity Learn Tutorials →</a></li>
+                        </ul>
+                    </div>
+                     <div class="card rounded-2xl p-8 shadow-md">
+                        <h3 class="font-bold text-xl mb-4 text-gray-900">Visual Walkthrough</h3>
+                        <p class="text-gray-600 mb-4">This video provides a great visual guide for accessing the Passthrough Camera API.</p>
+                        <a href="https://youtu.be/FXFgkAmvpgo?si=Mm2wKrHstSTe-0js" target="_blank" class="inline-block bg-red-600 text-white font-bold py-2 px-4 rounded-lg hover:bg-red-700 transition-colors">Watch on YouTube →</a>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Section 7: References -->
+            <section id="references">
+                <h2 class="text-3xl font-bold text-center mb-12 text-gray-900">7. References & Works Cited</h2>
+                <div class="card rounded-2xl p-8 md:p-12 shadow-lg">
+                    <ol class="list-decimal list-inside text-sm text-gray-600 space-y-2 columns-1 md:columns-2">
+                        <li>Unity Hello World for Meta Quest VR headsets...</li>
+                        <li>Set up Unity for VR development...</li>
+                        <li>Passthrough basic tutorial...</li>
+                        <li>Get started with Unity on Android...</li>
+                        <li>Manual: Android environment setup...</li>
+                        <li>Device Setup | Meta Horizon OS...</li>
+                        <li>How to enable USB debugging... - Freshdesk</li>
+                        <li>Meta Quest 3 Quick Tip - Developer Mode...</li>
+                        <li>Passthrough on Meta Quest 3... - Reddit</li>
+                        <li>How to start developing with camera access...</li>
+                        <li>Basic Passthrough Tutorial with...</li>
+                        <li>Integrate Lepton - Teledyne FLIR OEM</li>
+                        <li>Teledyne FLIR Lepton Products – Mouser</li>
+                        <li>General Video and Command Interfacing...</li>
+                        <li>External Camera | Ocean</li>
+                        <li>XNiteUSB2S-MUV... - LDP LLC</li>
+                        <li>uvBeast Black Light UV Flashlight...</li>
+                        <li>Best 365 nm UV flashlight... - BudgetLightForum</li>
+                        <li>Native plug-ins for Android - Unity</li>
+                        <li>Create and use plug-ins in Android...</li>
+                        <li>Type casting AndroidJavaObject in Unity...</li>
+                        <li>Unity: C# to Android and Android to C#...</li>
+                        <li>Calling Java and Kotlin plug-in code...</li>
+                        <li>Creating, connecting, and optimizing...</li>
+                        <li>Camera Effect Shaders in Unity...</li>
+                        <li>Applying a Shader Graph to a URP Camera...</li>
+                        <li>I created a thermal camera... - Reddit</li>
+                        <li>How can I create an infra-red camera...</li>
+                        <li>Easy Way To Create A Skinned Thermal...</li>
+                        <li>Creating a black light (ultraviolet) shader...</li>
+                        <li>Ultraviolet Lights & Invisible Ink...</li>
+                        <li>How to get started with camera access...</li>
+                        <li>Passthrough Camera Access For Quest 3...</li>
+                        <li>Get started with UI Toolkit - Unity</li>
+                        <li>World Space UI Toolkit for VR...</li>
+                        <li>Testing and performance analysis...</li>
+                        <li>Foveated rendering in OpenXR - Unity</li>
+                        <li>Foveated rendering - Unity...</li>
+                        <li>What's the current state of Foveated...</li>
+                        <li>Any tips to optimize/fix this? - Reddit</li>
+                        <li>How To Make a Quest 3 Mixed Reality Game...</li>
+                        <li>How do I install my VR app on various...</li>
+                    </ol>
+                </div>
+            </section>
+        </div>
+
+    </main>
+
+    <footer class="text-center py-10 mt-16 border-t border-gray-200">
+        <p class="text-sm text-gray-500">A Comprehensive Guide for Advanced Sensory Augmentation on Meta Quest 3.</p>
+    </footer>
+
+    <script>
+        function openTab(event, tabId) {
+            let tabContents = document.getElementsByClassName("tab-content");
+            for (let i = 0; i < tabContents.length; i++) {
+                tabContents[i].style.display = "none";
+            }
+            let tabButtons = document.getElementsByClassName("tab-button");
+            for (let i = 0; i < tabButtons.length; i++) {
+                tabButtons[i].classList.remove("active");
+            }
+            document.getElementById(tabId).style.display = "block";
+            event.currentTarget.classList.add("active");
+        }
+    </script>
+</body>
+</html>
+
+
