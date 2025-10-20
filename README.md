@@ -1,4 +1,10 @@
-# Quest-XSA: A Research Guide to Enabling Visible Light, Thermal, and UV Vision on the Meta Quest
+# Quest-XSA: A Research Guide to Enabling Thermal,l and UV Vision on the Meta Quest
+
+---
+
+
+by Quest ReQuest VR https://linktr.ee/questrequestvr
+
 
 ---
 
