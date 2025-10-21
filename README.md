@@ -3,7 +3,7 @@
 ---
 
 
-by @QuestReQuestVR
+by @QuestReQuestVR (JOENASR)
 > https://linktr.ee/questrequestvr
 
 
@@ -86,7 +86,7 @@ Contributions are welcome. Please fork the repository and submit a pull request.
 
 LICENSE
 
-A Research Project by @QuestReQuestVR
+A Research Project @QuestReQuestVR
 https://linktr.ee/questrequestvr
-(Joe Nasr) KY
+(Joe Nasr)
 
