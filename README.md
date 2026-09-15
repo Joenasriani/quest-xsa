@@ -3,6 +3,8 @@
 **Author:** Joe Nasr / QuestRequestVR  
 **Research series:** Joe Nasr Quest Research  
 **Live project:** https://joenasriani.github.io/quest-xsa/  
+**Research abstract:** https://joenasriani.github.io/quest-xsa/research.html  
+**Research collection:** https://joenasriani.github.io/joe-research-registry/quest-research.html  
 **Author record:** https://joenasriani.github.io/joe-research-registry/author/joe-nasr.html  
 **Status:** Technical research and design study; implementation guide / web presentation
 
