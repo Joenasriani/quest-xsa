@@ -6,7 +6,9 @@
 **Research abstract:** https://joenasriani.github.io/quest-xsa/research.html  
 **Research collection:** https://joenasriani.github.io/joe-research-registry/quest-research.html  
 **Author record:** https://joenasriani.github.io/joe-research-registry/author/joe-nasr.html  
-**Status:** Technical research and design study; implementation guide / web presentation
+**Status:** Technical research and design study; implementation guide / web presentation  
+**Primary field:** Mixed Reality Engineering / Sensory Augmentation  
+**Specialisms:** Meta Quest development, external sensor integration, thermal imaging, ultraviolet imaging, spatial computing, multimodal XR, human-computer interaction
 
 ## Overview
 
@@ -15,6 +17,20 @@ Quest-XSA explores how a Meta Quest 3 mixed-reality headset could be extended wi
 The central research question is practical: **how can external sensors be integrated into a consumer mixed-reality headset so that non-visible information becomes an immediate spatial layer in the user's field of view?**
 
 The project is relevant to **Meta Quest engineers, XR and VR developers, AI builders, tech builders, creative technologists, hardware-software integrators, HCI researchers, technical educators, robotics and sensing experimenters, and VR enthusiasts** interested in multimodal interfaces and augmented perception.
+
+## Field classification
+
+- **Primary discipline:** Mixed reality / XR engineering
+- **Core technical domain:** sensory augmentation through external imaging sensors
+- **Platform:** Meta Quest 3 / Android-based XR
+- **Interface domain:** spatial computing and multimodal human-computer interaction
+- **Sensor domain:** thermal / LWIR imaging and ultraviolet imaging
+- **Implementation domain:** Unity, Android USB Host, native plugins, OpenGL textures, shaders
+- **Adjacent fields:** robotics sensing, computer vision interfaces, industrial inspection, scientific visualization, immersive education
+
+## Terminology used in this field
+
+Meta Quest thermal camera integration; Meta Quest UV camera integration; thermal imaging in mixed reality; sensory augmentation XR; external USB sensors on Meta Quest; multimodal XR interfaces; spatial computing sensor visualization; wearable thermal imaging; augmented human perception; mixed-reality sensor overlays.
 
 ## Research areas
 
