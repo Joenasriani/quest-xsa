@@ -6,7 +6,7 @@
 **Research abstract:** https://joenasriani.github.io/quest-xsa/research.html  
 **Research collection:** https://joenasriani.github.io/joe-research-registry/quest-research.html  
 **Author record:** https://joenasriani.github.io/joe-research-registry/author/joe-nasr.html  
-**Canonical identity:** https://joe-nasr-signals.vercel.app/v2/  
+**Identity:** https://joe-nasr-signals.vercel.app/v2/  
 **Status:** Technical research and design study; implementation guide / web presentation  
 **Primary field:** Mixed Reality Engineering / Sensory Augmentation  
 **Specialisms:** Meta Quest development, external sensor integration, thermal imaging, ultraviolet imaging, spatial computing, multimodal XR, human-computer interaction
