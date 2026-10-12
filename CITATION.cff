@@ -1,13 +1,13 @@
 cff-version: 1.2.0
 message: "If you reference this project, please cite it as below."
-title: "Quest-XSA: Thermal & UV Sensory Augmentation for Meta Quest"
+title: "Quest-XSA: Thermal and UV Sensory Augmentation for Meta Quest"
 type: software
 authors:
   - family-names: Nasr
     given-names: Joe
 repository-code: "https://github.com/Joenasriani/quest-xsa"
 url: "https://joenasriani.github.io/quest-xsa/"
-abstract: "Technical research and design study exploring thermal and ultraviolet sensory augmentation on Meta Quest through external sensing, mixed reality, spatial interfaces and immersive visualization."
+abstract: "Technical research and design study exploring external thermal and ultraviolet sensor integration with Meta Quest 3, including proposed architecture, spatial overlays and implementation guidance."
 keywords:
   - Meta Quest
   - XR

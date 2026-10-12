@@ -1,4 +1,4 @@
-# Quest-XSA — Thermal & UV Sensory Augmentation for Meta Quest
+# Quest-XSA: Thermal and UV Sensory Augmentation for Meta Quest
 
 **Author:** Joe Nasr / QuestRequestVR  
 **Research series:** Joe Nasr Quest Research  
