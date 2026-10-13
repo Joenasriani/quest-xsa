@@ -1,6 +1,5 @@
 # Quest-XSA: Thermal and UV Sensory Augmentation for Meta Quest
 
-**Author:** Joe Nasr / QuestRequestVR  
 **Research series:** Joe Nasr Quest Research  
 **Live project:** https://joenasriani.github.io/quest-xsa/  
 **Research abstract:** https://joenasriani.github.io/quest-xsa/research.html  
@@ -107,7 +106,9 @@ https://linktr.ee/questrequestvr
 
 ## Citation
 
-**Joe Nasr. _Quest-XSA: Thermal & UV Sensory Augmentation for Meta Quest._ QuestRequestVR.**  
+**Joe Nasr. _Quest-XSA: Thermal and UV Sensory Augmentation for Meta Quest._ QuestRequestVR.**  
 Repository: https://github.com/Joenasriani/quest-xsa
 
 Contributions and technical replication reports are welcome.
+
+Credit: Joe Nasr
