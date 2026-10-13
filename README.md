@@ -45,11 +45,11 @@ Meta Quest thermal camera integration; Meta Quest UV camera integration; thermal
 
 ## Proposed system architecture
 
-1. **Sensor layer** — external thermal and UV cameras provide data outside the visible spectrum.
-2. **Android / USB layer** — the Quest platform receives compatible external sensor streams through USB Host interfaces.
-3. **Native processing layer** — a native bridge can be used to decode or transfer imagery efficiently toward the rendering pipeline.
-4. **Unity / rendering layer** — sensor imagery is visualized through shaders and composited into an immersive or mixed-reality experience.
-5. **Perceptual layer** — the user interprets thermal or UV-derived imagery as an additional visual information channel.
+1. **Sensor layer**  –  external thermal and UV cameras provide data outside the visible spectrum.
+2. **Android / USB layer**  –  the Quest platform receives compatible external sensor streams through USB Host interfaces.
+3. **Native processing layer**  –  a native bridge can be used to decode or transfer imagery efficiently toward the rendering pipeline.
+4. **Unity / rendering layer**  –  sensor imagery is visualized through shaders and composited into an immersive or mixed-reality experience.
+5. **Perceptual layer**  –  the user interprets thermal or UV-derived imagery as an additional visual information channel.
 
 ## Hardware reference
 

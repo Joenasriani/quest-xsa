@@ -106,7 +106,7 @@
     <header class="hero-bg text-center py-20 px-4 sm:px-6 lg:px-8 border-b border-gray-200">
         <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight text-gray-900">Quest-XSA: Thermal and UV Sensory Augmentation for Meta Quest</h1>
 
-        <p class="mt-4 max-w-3xl mx-auto text-lg md:text-xl text-gray-600">The Complete Developer's Guide to Building Animal Vision on the Meta Quest</p>
+        <p class="mt-4 max-w-3xl mx-auto text-lg md:text-xl text-gray-600">Proposed thermal and ultraviolet sensor interfaces for Meta Quest</p>
         
     </header>
 
@@ -123,58 +123,55 @@
             <section id="vision">
                 <div class="card rounded-2xl p-8 md:p-12 shadow-lg">
                     <h2 class="text-3xl font-bold text-gray-900 mb-4">1. The Vision Behind Augmented Senses</h2>
-                    <p class="text-gray-700 leading-relaxed">
-                        Imagine seeing the world through the eyes of a pit viper, sensing the heat radiating from objects, or experiencing the vibrant, hidden patterns only visible in ultraviolet light, much like a bee. This project details an invention that transforms the Meta Quest 3 into a device capable of precisely that: augmenting human perception with simulated animal senses using external thermal and UV cameras.
-                        <br><br>
-                        This guide provides a step-by-step blueprint, blending theoretical explanations with practical implementation details, to develop a sophisticated mixed reality application. You will learn how to bridge external hardware with the virtual world, process specialized sensor data in real-time using custom shaders, and control the experience with an intuitive in-world user interface.
-                    </p>
+                    <p class="text-gray-700 leading-relaxed"><strong>Abstract.</strong> This design study proposes displaying external thermal and ultraviolet sensor data in a Meta Quest interface. It includes architecture sketches and illustrative code, but does not provide a complete reproducible Unity/Android/NDK application or measured integrated performance. False-color sensor displays do not reproduce an animal's visual experience.</p>
                 </div>
             </section>
 
             <!-- Section 2: The Toolkit -->
             <section id="toolkit">
-                <h2 class="text-3xl font-bold text-center mb-12 text-gray-900">2. The Toolkit: Hardware You'll Need</h2>
+                <h2 class="text-3xl font-bold text-center mb-12 text-gray-900">2. Candidate Hardware</h2>
+<p>Prices are historical planning estimates, not current quotations or a verified complete build cost.</p>
                 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
                     <!-- Meta Quest 3 -->
                     <div class="card rounded-2xl p-6 text-center shadow-md flex flex-col">
                         <img src="images/metaquest-3-headset.jpg" alt="Meta Quest 3" class="rounded-lg mx-auto mb-4 aspect-video w-full object-cover bg-gray-200">
                         <h3 class="text-xl font-bold">Meta Quest 3 Headset</h3>
-                        <p class="text-gray-600 text-sm my-2 flex-grow">Chosen for its powerful Snapdragon XR2 Gen 2 processor, high-resolution color passthrough, and mature developer ecosystem.</p>
+                        <p class="text-gray-600 text-sm my-2 flex-grow">Candidate headset platform. SDK, sensor access and peripheral compatibility must be checked for the target hardware and software versions.</p>
                         <p class="text-2xl font-black text-blue-600 mt-2">~1,835 AED</p>
                     </div>
                     <!-- Thermal Camera -->
                     <div class="card rounded-2xl p-6 text-center shadow-md flex flex-col">
                         <img src="images/thermal-camera-module.jpg" alt="Thermal Camera Module" class="rounded-lg mx-auto mb-4 aspect-video w-full object-cover bg-gray-200">
                         <h3 class="text-xl font-bold">Thermal Camera Module</h3>
-                        <p class="text-gray-600 text-sm my-2 flex-grow">The Lepton 3.5 is selected for its high resolution (160x120), radiometric accuracy, and compact form factor.</p>
+                        <p class="text-gray-600 text-sm my-2 flex-grow">Candidate 160x120 thermal module. A compatible interface board, calibration and integration testing are required.</p>
                         <p class="text-2xl font-black text-blue-600 mt-2">~605 AED</p>
                     </div>
                     <!-- Breakout Board -->
                     <div class="card rounded-2xl p-6 text-center shadow-md flex flex-col">
                          <img src="images/lepton-breaker.jpg" alt="Lepton Breakout Board" class="rounded-lg mx-auto mb-4 aspect-video w-full object-cover bg-gray-200">
                         <h3 class="text-xl font-bold">Lepton Breakout Board</h3>
-                        <p class="text-gray-600 text-sm my-2 flex-grow">Provides a stable USB interface and handles the complex power requirements of the Lepton module, simplifying hardware integration.</p>
+                        <p class="text-gray-600 text-sm my-2 flex-grow">The chosen breakout board must support the camera module and the intended USB data and power path. A specific board and driver combination has not been validated here.</p>
                         <p class="text-2xl font-black text-blue-600 mt-2">~245 AED</p>
                     </div>
                     <!-- UV Camera -->
                     <div class="card rounded-2xl p-6 text-center shadow-md flex flex-col">
                         <img src="images/uv-camera-module.jpg" alt="UV Camera Module" class="rounded-lg mx-auto mb-4 aspect-video w-full object-cover bg-gray-200">
                         <h3 class="text-xl font-bold">UV Camera Module</h3>
-                        <p class="text-gray-600 text-sm my-2 flex-grow">Must be UVC-compliant (USB Video Class) for driverless operation on the Android-based Quest OS.</p>
+                        <p class="text-gray-600 text-sm my-2 flex-grow">UVC compatibility alone does not establish operation on Quest. Verify the sensor's spectral response, optics, filters, Android access and application driver support.</p>
                         <p class="text-2xl font-black text-blue-600 mt-2">~550 AED</p>
                     </div>
                     <!-- 3D Printer -->
                     <div class="card rounded-2xl p-6 text-center shadow-md flex flex-col">
                         <img src="images/3d-printer.jpg" alt="3D Printer" class="rounded-lg mx-auto mb-4 aspect-video w-full object-cover bg-gray-200">
                         <h3 class="text-xl font-bold">3D Printer</h3>
-                        <p class="text-gray-600 text-sm my-2 flex-grow">Essential for creating a custom, lightweight rig to mount the cameras and USB hub securely to the Quest 3 headset.</p>
+                        <p class="text-gray-600 text-sm my-2 flex-grow">A possible fabrication method for a mounting prototype. Mounting, balance and thermal clearance require evaluation.</p>
                         <p class="text-2xl font-black text-blue-600 mt-2">~1,100 AED</p>
                     </div>
                     <!-- USB Hub -->
                     <div class="card rounded-2xl p-6 text-center shadow-md flex flex-col">
                         <img src="images/powered-usbc-hub.jpg" alt="Powered USB-C Hub" class="rounded-lg mx-auto mb-4 aspect-video w-full object-cover bg-gray-200">
                         <h3 class="text-xl font-bold">Powered USB-C Hub</h3>
-                        <p class="text-gray-600 text-sm my-2 flex-grow">A powered hub is non-negotiable to prevent battery drain and ensure stable power for consistent data transfer.</p>
+                        <p class="text-gray-600 text-sm my-2 flex-grow">A powered USB-C hub is a candidate for peripheral power and data. Simultaneous charging, USB roles and sensor access require device-level testing.</p>
                         <p class="text-2xl font-black text-blue-600 mt-2">~275 AED</p>
                     </div>
                 </div>
@@ -185,7 +182,7 @@
         <section id="hardware-sketch">
             <div class="text-center mb-12">
                 <h2 class="text-3xl font-bold text-gray-900">Visualizing the Hardware Rig</h2>
-                <p class="text-gray-600 mt-2 max-w-2xl mx-auto">This sketch illustrates how the external components are assembled onto a 3D-printed mount attached to the Quest 3 headset.</p>
+                <p class="text-gray-600 mt-2 max-w-2xl mx-auto">This sketch shows a proposed component layout, not a documented assembly.</p>
             </div>
             <div class="sketch-bg rounded-2xl p-8 flex justify-center items-center shadow-lg">
                 <svg viewBox="0 0 800 400" class="w-full h-auto max-w-3xl">
@@ -225,7 +222,7 @@
         <div class="space-y-24">
             <div class="text-center">
                 <h2 class="text-base font-semibold text-cyan-600 tracking-wider uppercase">Part 2</h2>
-                <p class="mt-2 text-3xl font-extrabold text-gray-900 tracking-tight sm:text-4xl">The Implementation</p>
+                <p class="mt-2 text-3xl font-extrabold text-gray-900 tracking-tight sm:text-4xl">Proposed Implementation</p>
             </div>
             
             <!-- NEW SECTION: 3D Print Design -->
@@ -257,7 +254,7 @@
                                     <svg class="w-6 h-6 text-blue-500 mr-3 flex-shrink-0 mt-1" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2h10a2 2 0 002-2v-1a2 2 0 012-2h1.945M7.737 16.95l.001-.001M16.263 16.95l-.001-.001M12 20h.01"></path></svg>
                                     <div>
                                         <h4 class="font-semibold">Stability & Rigidity</h4>
-                                        <p class="text-sm">The mount must be completely rigid. Any wobble or vibration will ruin the mixed reality alignment and cause motion sickness.</p>
+                                        <p class="text-sm">Movement between sensor and headset can affect overlay alignment. Measure mounting stability, calibration and user comfort.</p>
                                     </div>
                                 </li>
                                 <li class="flex items-start">
@@ -384,7 +381,7 @@
 
             <!-- Section 3: The Build Process -->
             <section id="build-process">
-                 <h2 class="text-3xl font-bold text-center mb-12 text-gray-900">5. The Build Process: An Exhaustive Guide</h2>
+                 <h2 class="text-3xl font-bold text-center mb-12 text-gray-900">5. Proposed Build Process</h2>
                  <div class="card rounded-2xl p-8 md:p-12 shadow-lg space-y-12">
                      
                      <!-- Part A: Foundation & Native Code -->
@@ -482,7 +479,7 @@
                                         </div>
                                         <div>
                                             <h5 class="font-bold">3. Build the APK</h5>
-                                            <p>Open <code class="bg-gray-200 p-1 rounded">File > Build Settings</code>. Choose 'Build' to create a signed APK file (e.g., `AnimalVision.apk`) that is ready for distribution.</p>
+                                            <p>Open <code class="bg-gray-200 p-1 rounded">File > Build Settings</code>. Choose 'Build' to create a signed APK file (e.g., `AnimalVision.apk`) that is ready for device testing; distribution requires separate platform checks.</p>
                                         </div>
                                         <div>
                                             <h5 class="font-bold">4. Sideload and Test</h5>
@@ -500,13 +497,13 @@
             <!-- NEW SKETCH: Performance -->
             <section id="performance-sketch">
                  <div class="text-center mb-12">
-                    <h2 class="text-3xl font-bold text-gray-900">The Performance Imperative: Why GPU Pointers Matter</h2>
-                    <p class="text-gray-600 mt-2 max-w-2xl mx-auto">This diagram contrasts the slow, traditional method of copying video frames with the high-speed "Expert Method" required for VR.</p>
+                    <h2 class="text-3xl font-bold text-gray-900">Frame Transfer and Performance</h2>
+                    <p class="text-gray-600 mt-2 max-w-2xl mx-auto">This diagram compares possible frame-transfer paths. Relative performance must be measured for the actual decoder, graphics API and device.</p>
                 </div>
                 <div class="sketch-bg rounded-2xl p-8 grid grid-cols-1 md:grid-cols-2 gap-8 shadow-lg">
                     <!-- Inefficient Method -->
                     <div class="border-2 border-red-300 rounded-lg p-6 bg-red-50">
-                        <h3 class="text-xl font-bold text-red-700 text-center mb-4">The SLOW Way: CPU Data Copy</h3>
+                        <h3 class="text-xl font-bold text-red-700 text-center mb-4">CPU Frame Copy</h3>
                         <svg viewBox="0 0 300 200" class="w-full h-auto">
                             <rect x="20" y="20" width="80" height="40" rx="5" fill="#fecaca" stroke="#dc2626" stroke-width="2"/>
                             <text x="60" y="45" text-anchor="middle" font-size="12">NATIVE</text>
@@ -528,7 +525,7 @@
                     </div>
                     <!-- Expert Method -->
                     <div class="border-2 border-green-300 rounded-lg p-6 bg-green-50">
-                        <h3 class="text-xl font-bold text-green-700 text-center mb-4">The FAST Way: GPU Pointer</h3>
+                        <h3 class="text-xl font-bold text-green-700 text-center mb-4">Native Texture Sharing</h3>
                         <svg viewBox="0 0 300 200" class="w-full h-auto">
                             <rect x="20" y="20" width="80" height="40" rx="5" fill="#d1fae5" stroke="#059669" stroke-width="2"/>
                             <text x="60" y="45" text-anchor="middle" font-size="12">NATIVE</text>
@@ -589,21 +586,21 @@ public IntPtr GetThermalTexturePtr() {
                                 </div>
                             </div>
                             <div>
-                                 <h4 class="font-bold text-xl mb-2 text-cyan-600">The Expert Method (GPU Texture Pointers)</h4>
-                                 <p class="text-sm text-gray-700 mb-4">The NDK layer decodes the video stream directly into a native OpenGL texture on the GPU. The plugin passes its integer ID (the "pointer") back to Unity. Unity then uses `Texture2D.CreateExternalTexture` to reference this data directly, eliminating slow CPU-to-GPU memory copies and preserving performance.</p>
+                                 <h4 class="font-bold text-xl mb-2 text-cyan-600">Native Texture Sharing</h4>
+                                 <p class="text-sm text-gray-700 mb-4">The proposed native layer would decode or upload frames to a graphics texture. Sharing that texture with Unity requires compatible graphics contexts, synchronization and texture handling. These snippets do not establish a working zero-copy pipeline.</p>
                                  <div class="bg-gray-50 border border-gray-200 rounded-xl p-6">
                                     <h2 class="text-xl font-bold text-gray-800 mb-4">VR Performance Comparison</h2>
                                     <div class="flex-grow flex flex-col justify-around space-y-4">
                                         <div>
                                             <div class="flex justify-between items-end mb-1">
-                                                <h3 class="font-semibold text-red-600">Inefficient (CPU Copy)</h3>
+                                                <h3 class="font-semibold text-red-600">CPU Copy</h3>
                                                 <span class="text-lg font-bold text-red-600">~25 FPS</span>
                                             </div>
                                             <div class="w-full bg-gray-200 rounded-full h-4"><div class="bg-red-500 h-4 rounded-full" style="width: 35%"></div></div>
                                         </div>
                                         <div>
                                             <div class="flex justify-between items-end mb-1">
-                                                <h3 class="font-semibold text-green-600">Expert (GPU Pointer)</h3>
+                                                <h3 class="font-semibold text-green-600">Native Texture Sharing</h3>
                                                 <span class="text-lg font-bold text-green-600">72+ FPS</span>
                                             </div>
                                             <div class="w-full bg-gray-200 rounded-full h-4"><div class="bg-green-500 h-4 rounded-full" style="width: 100%"></div></div>
@@ -625,7 +622,7 @@ public IntPtr GetThermalTexturePtr() {
                             </div>
                             <div class="bg-white p-6 rounded-lg border border-gray-200">
                                 <h4 class="font-bold text-violet-600 text-xl">UV Vision</h4>
-                                <p class="text-sm text-gray-600 mt-2">Applies high contrast and a false-color glow to reveal fluorescent patterns invisible to the human eye.</p>
+                                <p class="text-sm text-gray-600 mt-2">A display shader can map recorded sensor values to false colors. Reflected UV imaging and UV-induced visible fluorescence are different acquisition methods; a shader cannot recover wavelengths the sensor did not capture.</p>
                                 <p class="mt-4 font-mono text-xs bg-gray-100 p-2 rounded"><b>Key Nodes:</b> `Sample Texture 2D` -> `Power` (Contrast) -> `Multiply` (Color) -> `Emission`</p>
                             </div>
                             <div class="bg-white p-6 rounded-lg border border-gray-200">
@@ -698,13 +695,13 @@ public IntPtr GetThermalTexturePtr() {
                             <div>
                                 <h4 class="text-xl font-bold text-center text-amber-600 mb-4">Thermal Vision Output</h4>
                                 <img src="images/thermal-vision-output.jpg" alt="Example of thermal vision output showing a heat map of a scene." class="rounded-lg shadow-md aspect-video w-full object-cover bg-gray-200">
-                                <p class="text-center text-sm text-gray-600 mt-3">This is how the thermal camera data is rendered. Warm objects, like a human hand or a hot coffee mug, appear bright yellow/white, while cooler background elements are shown in deep blues and purples.</p>
+                                <p class="text-center text-sm text-gray-600 mt-3">Illustrative false-color mapping. This image is not presented as a recorded output from a validated integrated prototype.</p>
                             </div>
                             <!-- UV Vision Example -->
                             <div>
                                 <h4 class="text-xl font-bold text-center text-violet-600 mb-4">UV Vision Output</h4>
                                 <img src="images/uv-vision-output.jpg" alt="Example of UV vision output showing hidden patterns on a flower." class="rounded-lg shadow-md aspect-video w-full object-cover bg-gray-200">
-                                <p class="text-center text-sm text-gray-600 mt-3">Here, the UV camera captures patterns invisible to the naked eye. The shader enhances this data, making UV-reflective surfaces (like the nectar guides on a flower) glow with a vibrant, otherworldly light.</p>
+                                <p class="text-center text-sm text-gray-600 mt-3">Illustrative UV display concept. Actual output depends on sensor sensitivity, optics, filtering and illumination; this example does not demonstrate an animal's visual experience.</p>
                             </div>
                         </div>
                     </div>
@@ -800,8 +797,8 @@ public IntPtr GetThermalTexturePtr() {
 
                     <!-- VR Optimization -->
                     <div class="card rounded-2xl p-8 md:p-12 shadow-lg">
-                         <h3 class="text-2xl font-bold mb-4 text-gray-900">The Performance Mandate: VR Optimization</h3>
-                         <p class="text-gray-600 mb-6">A consistent 72+ FPS is non-negotiable for a comfortable VR experience. Layering optimizations is essential.</p>
+                         <h3 class="text-2xl font-bold mb-4 text-gray-900">VR Performance Evaluation</h3>
+                         <p class="text-gray-600 mb-6">Choose a supported refresh rate and measure frame time, dropped frames and end-to-end latency on the target headset. Frame rate alone does not establish comfort.</p>
                          <div class="flex flex-col md:flex-row items-center justify-center gap-8">
                              <div class="relative">
                                 <div class="conic-gradient-chart"></div>
@@ -836,7 +833,7 @@ public IntPtr GetThermalTexturePtr() {
                         </summary>
                         <div class="mt-4 text-gray-600 space-y-2">
                             <p><strong>Cause:</strong> USB permissions not granted, faulty cable/hub, or incorrect Vendor/Product ID in the native plugin.</p>
-                            <p><strong>Solution:</strong> Re-plug the headset and re-accept the USB debugging prompt. Check that your USB-C hub is powered. Use `adb logcat` to check for USB device attachment logs and verify the VID and PID your code is looking for match the device.</p>
+                            <p><strong>Possible checks:</strong> Inspect USB device discovery and the application's device-permission flow, verify the cable and hub, and compare the detected vendor/product IDs with the device filter. ADB debugging authorization is separate from permission to access a USB peripheral.</p>
                         </div>
                     </details>
                     <details class="border-b border-gray-200 pb-4">
@@ -865,8 +862,8 @@ public IntPtr GetThermalTexturePtr() {
                             <svg class="w-6 h-6 text-gray-500 transition-transform arrow-down" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
                         </summary>
                         <div class="mt-4 text-gray-600 space-y-2">
-                            <p><strong>Cause:</strong> Most likely not using the GPU texture pointer method. Shaders may be too complex, or Fixed Foveated Rendering (FFR) is disabled.</p>
-                            <p><strong>Solution:</strong> Ensure your entire pipeline uses the native texture pointer method. Enable FFR (High) in the Meta XR settings. Use the Unity Profiler to identify and optimize costly shader calculations or C# script logic.</p>
+                            <p><strong>Possible causes:</strong> Frame copies, decoding, shader cost, synchronization or other CPU/GPU workload. Profile the application before selecting an optimization.</p>
+                            <p><strong>Possible checks:</strong> Measure CPU and GPU frame times, memory transfers and decoder cost. Evaluate texture sharing and rendering settings against the measured bottleneck.</p>
                         </div>
                     </details>
                 </div>
@@ -930,11 +927,11 @@ public IntPtr GetThermalTexturePtr() {
 
             <!-- Section 6: Conclusion & Future Horizons -->
             <section id="conclusion">
-                <h2 class="text-3xl font-bold text-center mb-12 text-gray-900">9. Conclusion & Future Horizons</h2>
+                <h2 class="text-3xl font-bold text-center mb-12 text-gray-900">9. Limitations and Future Work</h2>
                 <div class="card rounded-2xl p-8 md:p-12 shadow-lg space-y-8">
                     <div>
-                        <h3 class="text-2xl font-bold text-gray-900 mb-4">Why Build This? The Core Purpose</h3>
-                        <p class="text-gray-700 leading-relaxed">This project transcends a simple tech demo; it's an exploration into the future of human-computer interaction and perception. By integrating external sensors with mixed reality, we unlock the ability to visualize and interact with data streams that are normally invisible. This technology serves as a powerful platform for education, professional training, scientific research, and even artistic expression, fundamentally changing how we perceive and understand the world around us.</p>
+                        <h3 class="text-2xl font-bold text-gray-900 mb-4">Current contribution</h3>
+                        <p class="text-gray-700 leading-relaxed">This study outlines a possible interface for viewing thermal and ultraviolet sensor data in mixed reality. The next step is to verify a specific sensor and headset combination, publish a reproducible build and measure alignment, latency and usability.</p>
                     </div>
 
                     <div>
@@ -942,19 +939,19 @@ public IntPtr GetThermalTexturePtr() {
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                             <div class="bg-gray-50 p-6 rounded-lg border border-gray-200">
                                 <h4 class="font-bold text-lg text-blue-600">Industrial & Safety Inspections</h4>
-                                <p class="text-gray-600 mt-2 text-sm">An HVAC technician uses thermal vision to instantly see heat leaks in insulation or faulty electrical connections in a complex panel, overlaying the heat map directly onto their real-world view. This allows for faster, more accurate diagnostics and preventative maintenance.</p>
+                                <p class="text-gray-600 mt-2 text-sm">Proposed inspection scenario: overlay thermal measurements on a workspace. Diagnostic accuracy and practical usefulness would require calibration and task-specific evaluation.</p>
                             </div>
                             <div class="bg-gray-50 p-6 rounded-lg border border-gray-200">
                                 <h4 class="font-bold text-lg text-blue-600">Scientific & Environmental Field Research</h4>
-                                <p class="text-gray-600 mt-2 text-sm">A biologist studying pollination uses UV vision to see the "nectar guide" patterns on flowers exactly as a bee would, gaining unprecedented insight into animal behavior. A wildlife researcher could use thermal vision at night to conduct population counts of nocturnal animals non-invasively.</p>
+                                <p class="text-gray-600 mt-2 text-sm">Proposed research scenario: display recorded ultraviolet or thermal data. Such a display is an instrument-based representation and should not be described as seeing exactly as an animal does.</p>
                             </div>
                              <div class="bg-gray-50 p-6 rounded-lg border border-gray-200">
                                 <h4 class="font-bold text-lg text-blue-600">Next Step: Sensor Fusion (MSX)</h4>
-                                <p class="text-gray-600 mt-2 text-sm">A compelling next step is to implement Multi-Spectral Dynamic Imaging (MSX). This involves running an edge-detection algorithm on the Quest's RGB camera and overlaying the outlines onto the low-resolution thermal image, adding crucial definition and context.</p>
+                                <p class="text-gray-600 mt-2 text-sm">Future work could explore registered overlays of visible and thermal imagery. Camera access, calibration and alignment would need to be established first.</p>
                             </div>
                             <div class="bg-gray-50 p-6 rounded-lg border border-gray-200">
                                 <h4 class="font-bold text-lg text-blue-600">Future: Machine Learning Integration</h4>
-                                <p class="text-gray-600 mt-2 text-sm">The live camera feeds could be processed by an on-device machine learning model. This could enable real-time object recognition (e.g., "Hot Pipe Detected") or even gesture recognition, creating a truly futuristic and intelligent sensory augmentation tool.</p>
+                                <p class="text-gray-600 mt-2 text-sm">Future work could evaluate on-device classification of sensor data. No model, accuracy result or operational recognition capability is demonstrated here.</p>
                             </div>
                         </div>
                     </div>
@@ -963,7 +960,7 @@ public IntPtr GetThermalTexturePtr() {
             
             <!-- Section 7: Resources -->
             <section id="resources">
-                <h2 class="text-3xl font-bold text-center mb-12 text-gray-900">10. Additional Resources & References</h2>
+                <h2 class="text-3xl font-bold text-center mb-12 text-gray-900">10. References</h2>
                 <div class="card rounded-2xl p-8 md:p-12 shadow-lg">
                     <ul class="list-disc list-inside text-sm text-gray-600 space-y-2 columns-1 md:columns-2">
                         <li><a href="https://developer.oculus.com/documentation/unity/" target="_blank" class="text-blue-600 hover:text-blue-500">Official Meta Quest Developer Docs for Unity</a></li>
