@@ -98,7 +98,7 @@
     </style>
 <meta name="citation_title" content="Quest-XSA: Thermal and UV Sensory Augmentation for Meta Quest">
 <meta name="citation_author" content="Joe Nasr">
-<meta name="citation_publication_date" content="2025">
+<!-- Project inception and first-publication date require documentary verification; no preprint publication date asserted. -->
 </head>
 <body class="antialiased">
 
@@ -156,8 +156,8 @@
                     <!-- UV Camera -->
                     <div class="card rounded-2xl p-6 text-center shadow-md flex flex-col">
                         <img src="images/uv-camera-module.jpg" alt="UV Camera Module" class="rounded-lg mx-auto mb-4 aspect-video w-full object-cover bg-gray-200">
-                        <h3 class="text-xl font-bold">UV Camera Module</h3>
-                        <p class="text-gray-600 text-sm my-2 flex-grow">UVC compatibility alone does not establish operation on Quest. Verify the sensor's spectral response, optics, filters, Android access and application driver support.</p>
+                        <h3 class="text-xl font-bold">Candidate UV Imaging Camera (Model Unselected)</h3>
+                        <p class="text-gray-600 text-sm my-2 flex-grow">USB Video Class (UVC) is a data-interface standard, not evidence of ultraviolet response. Qualify an actual spectral-range sensor, UV-transmitting optics and filters, illumination regime, calibration, output format, driver and Quest access. No compatible model has been demonstrated.</p>
                         <p class="text-2xl font-black text-blue-600 mt-2">~550 AED</p>
                     </div>
                     <!-- 3D Printer -->
@@ -422,13 +422,13 @@
                                         <p><strong>1. Create Android Library Project:</strong> In Android Studio, choose the <strong>'Android Library'</strong> template. This is crucial as it compiles to a self-contained <code class="bg-gray-200 p-1 rounded">.aar</code> file.</p>
                                         <div>
                                             <h5 class="font-bold">2. Configure Manifest & Gradle</h5>
-                                            <p>In your library's <code class="bg-gray-200 p-1 rounded">AndroidManifest.xml</code>, you must declare the ability to host USB devices:</p>
+                                            <p>In the final Android app manifest, declare the host feature if appropriate, then implement USB enumeration, per-device permission requests, interface claims, endpoint transfers and detach handling. This snippet alone does not grant device access:</p>
                                             <div class="code-block mt-2">&lt;uses-feature android:name="android.hardware.usb.host" /&gt;</div>
                                             <p class="mt-2">In <code class="bg-gray-200 p-1 rounded">build.gradle</code>, ensure your `minSdkVersion` is at least 30.</p>
                                         </div>
                                         <div>
                                             <h5 class="font-bold">3. Bridge to Native C/C++ (NDK)</h5>
-                                            <p>The Java code's role is to get permission. It then passes the device's file descriptor (an integer) to a C/C++ function using JNI. This C++ layer handles the video stream directly on a background thread for maximum performance.</p>
+                                            <p>The managed layer must discover the actual peripheral and obtain user permission. If the selected device and implementation support transferring a file descriptor to native code, the JNI bridge must preserve descriptor lifetime, transport format and threading guarantees. This is a proposed integration path, not an implemented high-performance decoder.</p>
                                         </div>
                                         <p><strong>4. Build the AAR:</strong> Use 'Build' > 'Make Project'. The final plugin, <code class="bg-gray-200 p-1 rounded">mylibrary-release.aar</code>, will be in the <code class="bg-gray-200 p-1 rounded">/build/outputs/aar/</code> directory.</p>
                                      </div>
@@ -517,7 +517,7 @@
                              <!-- Arrow 2 -->
                             <path d="M170 90 Q 200 70, 230 60" stroke="#ef4444" stroke-width="3" fill="none" marker-end="url(#arrowhead-red)"/>
                             <text x="185" y="75" font-size="10" fill="#b91c1c">Copy Full Frame</text>
-                            <text x="150" y="160" font-weight="bold" text-anchor="middle" fill="#991b1b">Result: Stuttering & Lag</text>
+                            <text x="150" y="160" font-weight="bold" text-anchor="middle" fill="#991b1b">Effect must be profiled</text>
                             <defs>
                                 <marker id="arrowhead-red" markerWidth="10" markerHeight="7" refX="0" refY="3.5" orient="auto"><polygon points="0 0, 10 3.5, 0 7" fill="#dc2626"/></marker>
                             </defs>
@@ -535,10 +535,10 @@
                             <text x="240" y="45" text-anchor="middle" font-size="12">GPU</text>
                              <!-- Arrow -->
                             <path d="M70 60 Q 100 80, 130 90" stroke="#10b981" stroke-width="2" fill="none" marker-end="url(#arrowhead-green)"/>
-                            <text x="125" y="75" font-size="10" fill="#047857">Pass Tiny Pointer</text>
+                            <text x="125" y="75" font-size="10" fill="#047857">Conditional Texture Handle</text>
                             <!-- Data on GPU -->
                             <rect x="30" y="140" width="240" height="30" rx="5" fill="#a7f3d0"/>
-                            <text x="150" y="160" text-anchor="middle" font-size="12" fill="#065f46">Frame Data Stays on GPU</text>
+                            <text x="150" y="160" text-anchor="middle" font-size="12" fill="#065f46">Requires verified buffer ownership and synchronization</text>
                             <path d="M60 60 V 140" stroke="#059669" stroke-width="1.5" stroke-dasharray="3" fill="none"/>
                             <path d="M240 60 V 140" stroke="#059669" stroke-width="1.5" stroke-dasharray="3" fill="none"/>
                              <defs>
@@ -556,7 +556,7 @@
                      <!-- Native Plugin -->
                     <div class="card rounded-2xl p-8 md:p-12 shadow-lg">
                         <h3 class="text-2xl font-bold mb-4 text-gray-900">The Core Bridge: Native Plugin & C# Wrapper</h3>
-                        <p class="text-gray-600 mb-6">This two-part system is the project's most critical component. The native Android plugin does the heavy lifting, and the C# script provides a simple interface for Unity.</p>
+                        <p class="text-gray-600 mb-6">This proposed Java/C# bridge is illustrative pseudocode, not an included functional Android plugin. The actual transport, texture lifecycle and graphics synchronization remain to be implemented and measured.</p>
                         <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
                             <div>
                                 <h4 class="font-bold text-xl mb-2 text-cyan-600">C# Wrapper (`ExternalCameraManager.cs`)</h4>
@@ -594,14 +594,14 @@ public IntPtr GetThermalTexturePtr() {
                                         <div>
                                             <div class="flex justify-between items-end mb-1">
                                                 <h3 class="font-semibold text-red-600">CPU Copy</h3>
-                                                <span class="text-lg font-bold text-red-600">~25 FPS</span>
+                                                <span class="text-sm font-semibold text-red-600">Unmeasured</span>
                                             </div>
                                             <div class="w-full bg-gray-200 rounded-full h-4"><div class="bg-red-500 h-4 rounded-full" style="width: 35%"></div></div>
                                         </div>
                                         <div>
                                             <div class="flex justify-between items-end mb-1">
                                                 <h3 class="font-semibold text-green-600">Native Texture Sharing</h3>
-                                                <span class="text-lg font-bold text-green-600">72+ FPS</span>
+                                                <span class="text-sm font-semibold text-green-600">Unmeasured</span>
                                             </div>
                                             <div class="w-full bg-gray-200 rounded-full h-4"><div class="bg-green-500 h-4 rounded-full" style="width: 100%"></div></div>
                                         </div>
@@ -804,17 +804,17 @@ public IntPtr GetThermalTexturePtr() {
                                 <div class="conic-gradient-chart"></div>
                                 <div class="absolute inset-0 flex items-center justify-center">
                                     <div class="bg-gray-100 border-4 border-white w-28 h-28 rounded-full flex items-center justify-center">
-                                        <span class="text-3xl font-bold text-gray-900">72<span class="text-base font-normal ml-1">FPS</span></span>
+                                        <span class="text-lg font-bold text-gray-900">Unmeasured</span>
                                     </div>
                                 </div>
                              </div>
                              <div class="space-y-3">
-                                 <h4 class="font-bold text-xl text-gray-900">Path to 72 FPS:</h4>
+                                 <h4 class="font-bold text-xl text-gray-900">Optimization hypotheses (not additive benchmarks):</h4>
                                  <div class="text-md space-y-2 text-left text-gray-700">
-                                     <div class="flex items-center"><div class="w-4 h-4 rounded-full bg-[#10b981] mr-3"></div><span>~35 FPS (Baseline Unoptimized)</span></div>
-                                     <div class="flex items-center"><div class="w-4 h-4 rounded-full bg-[#34d399] mr-3"></div><span>+20 FPS from Fixed Foveated Rendering (FFR)</span></div>
-                                     <div class="flex items-center"><div class="w-4 h-4 rounded-full bg-[#6ee7b7] mr-3"></div><span>+10 FPS from Shader Optimization</span></div>
-                                     <div class="flex items-center"><div class="w-4 h-4 rounded-full bg-[#a7f3d0] mr-3"></div><span>+7 FPS from Static Batching & Culling</span></div>
+                                     <div class="flex items-center"><div class="w-4 h-4 rounded-full bg-[#10b981] mr-3"></div><span>Baseline frame rate: not measured</span></div>
+                                     <div class="flex items-center"><div class="w-4 h-4 rounded-full bg-[#34d399] mr-3"></div><span>Fixed Foveated Rendering: measure device-specific effect</span></div>
+                                     <div class="flex items-center"><div class="w-4 h-4 rounded-full bg-[#6ee7b7] mr-3"></div><span>Shader optimization: measure device-specific effect</span></div>
+                                     <div class="flex items-center"><div class="w-4 h-4 rounded-full bg-[#a7f3d0] mr-3"></div><span>Batching and culling: measure device-specific effect</span></div>
                                  </div>
                              </div>
                          </div>
