@@ -104,6 +104,18 @@ https://joenasriani.github.io/joe-research-registry/author/joe-nasr.html
 QuestRequestVR:  
 https://linktr.ee/questrequestvr
 
+## Implementation evidence and scientific scope
+
+This is an engineering design study and learning resource, not a verified buildable Quest thermal/UV system. No Quest-XSA sensor-to-display pipeline, FPS improvement, image alignment accuracy, latency or power measurements have been reproduced.
+
+- [Evidence status](EVIDENCE_STATUS.md)
+- [Reproducibility requirements](REPRODUCIBILITY.md)
+- [Image provenance and attribution](RIGHTS_AND_ATTRIBUTION.md)
+
+Earlier thermal and ultraviolet head-mounted AR research includes Erickson et al., *Beyond Visible Light: User and Societal Impacts of Egocentric Multispectral Vision* (2021), https://doi.org/10.1007/978-3-030-77599-5_23. Quest-XSA adapts established ideas into a Quest-specific design reference; no original multispectral headset invention is claimed.
+
+UVC refers to USB Video Class, not the ultraviolet spectrum. A FLIR Lepton thermal core is not necessarily a USB-compatible camera. Hardware drivers, calibration, dual-stream operation and sensor-to-headset registration require actual experiments. A separate report remains an unpublished draft, and no DOI or peer review is claimed.
+
 ## Citation
 
 **Joe Nasr. _Quest-XSA: Thermal and UV Sensory Augmentation for Meta Quest._ QuestRequestVR.**  

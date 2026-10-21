@@ -98,7 +98,7 @@
     </style>
 <meta name="citation_title" content="Quest-XSA: Thermal and UV Sensory Augmentation for Meta Quest">
 <meta name="citation_author" content="Joe Nasr">
-<meta name="citation_publication_date" content="2025">
+<!-- Citation publication date not claimed without confirmed provenance. -->
 </head>
 <body class="antialiased">
 
@@ -107,6 +107,7 @@
         <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight text-gray-900">Quest-XSA: Thermal and UV Sensory Augmentation for Meta Quest</h1>
 
         <p class="mt-4 max-w-3xl mx-auto text-lg md:text-xl text-gray-600">Proposed thermal and ultraviolet sensor interfaces for Meta Quest</p>
+        <p class="mt-3 text-sm text-gray-600">Technical design study, not a validated headset prototype. <a href="https://github.com/Joenasriani/quest-xsa/blob/main/EVIDENCE_STATUS.md">Evidence status</a> | <a href="https://github.com/Joenasriani/quest-xsa/blob/main/REPRODUCIBILITY.md">Validation plan</a></p>
         
     </header>
 
@@ -157,7 +158,7 @@
                     <div class="card rounded-2xl p-6 text-center shadow-md flex flex-col">
                         <img src="images/uv-camera-module.jpg" alt="UV Camera Module" class="rounded-lg mx-auto mb-4 aspect-video w-full object-cover bg-gray-200">
                         <h3 class="text-xl font-bold">UV Camera Module</h3>
-                        <p class="text-gray-600 text-sm my-2 flex-grow">UVC compatibility alone does not establish operation on Quest. Verify the sensor's spectral response, optics, filters, Android access and application driver support.</p>
+                        <p class="text-gray-600 text-sm my-2 flex-grow">UVC means USB Video Class, not ultraviolet imaging. True UV acquisition requires verified detector spectral response, UV-transmitting optics, filters and compatible Android USB drivers.</p>
                         <p class="text-2xl font-black text-blue-600 mt-2">~550 AED</p>
                     </div>
                     <!-- 3D Printer -->
@@ -422,13 +423,13 @@
                                         <p><strong>1. Create Android Library Project:</strong> In Android Studio, choose the <strong>'Android Library'</strong> template. This is crucial as it compiles to a self-contained <code class="bg-gray-200 p-1 rounded">.aar</code> file.</p>
                                         <div>
                                             <h5 class="font-bold">2. Configure Manifest & Gradle</h5>
-                                            <p>In your library's <code class="bg-gray-200 p-1 rounded">AndroidManifest.xml</code>, you must declare the ability to host USB devices:</p>
+                                            <p>In your library's <code class="bg-gray-200 p-1 rounded">AndroidManifest.xml</code>, you must declare USB Host support, which does not itself grant access to an attached USB peripheral:</p>
                                             <div class="code-block mt-2">&lt;uses-feature android:name="android.hardware.usb.host" /&gt;</div>
-                                            <p class="mt-2">In <code class="bg-gray-200 p-1 rounded">build.gradle</code>, ensure your `minSdkVersion` is at least 30.</p>
+                                            <p class="mt-2">In <code class="bg-gray-200 p-1 rounded">build.gradle</code>, choose the SDK and build configuration for the verified headset firmware and actual Unity project; this guide does not include a tested build configuration.</p>
                                         </div>
                                         <div>
                                             <h5 class="font-bold">3. Bridge to Native C/C++ (NDK)</h5>
-                                            <p>The Java code's role is to get permission. It then passes the device's file descriptor (an integer) to a C/C++ function using JNI. This C++ layer handles the video stream directly on a background thread for maximum performance.</p>
+                                            <p>A proposed integration requests USB device permission from Android, then may pass an authorized handle through JNI to native capture code. Neither this bridge nor its performance is verified in Quest-XSA.</p>
                                         </div>
                                         <p><strong>4. Build the AAR:</strong> Use 'Build' > 'Make Project'. The final plugin, <code class="bg-gray-200 p-1 rounded">mylibrary-release.aar</code>, will be in the <code class="bg-gray-200 p-1 rounded">/build/outputs/aar/</code> directory.</p>
                                      </div>
@@ -471,7 +472,7 @@
                                      <div class="space-y-6 text-gray-700">
                                         <div>
                                             <h5 class="font-bold">1. Final Optimization Checks</h5>
-                                            <p>Before building, run the Unity Profiler. Ensure your app consistently hits 72 FPS or higher. Confirm that Fixed Foveated Rendering (FFR) is enabled in the Meta XR settings. Bake lighting for static objects.</p>
+                                            <p>Before building, run the Unity Profiler. Measure CPU/GPU frame timing at a supported headset refresh rate and separately measure end-to-end sensor latency. Enable optimizations only after profiling the actual build.</p>
                                         </div>
                                         <div>
                                             <h5 class="font-bold">2. Configure Player & Build Settings</h5>
@@ -560,7 +561,7 @@
                         <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
                             <div>
                                 <h4 class="font-bold text-xl mb-2 text-cyan-600">C# Wrapper (`ExternalCameraManager.cs`)</h4>
-                                <p class="text-sm text-gray-500 mb-4">This Unity script calls into the Java plugin without needing to know the complexities of the Android OS.</p>
+                                <p class="text-sm text-gray-500 mb-4">This is illustrative pseudocode, not a complete compilable Unity component. The corresponding Android plugin is not included in this repository.</p>
                                 <div class="bg-gray-800 text-white p-4 rounded-lg text-sm overflow-x-auto">
 <pre><code><span class="text-green-400">// Reference to the Java plugin class</span>
 private const string PluginName = "com.yourcompany.questxsa.CameraPlugin";
@@ -589,21 +590,21 @@ public IntPtr GetThermalTexturePtr() {
                                  <h4 class="font-bold text-xl mb-2 text-cyan-600">Native Texture Sharing</h4>
                                  <p class="text-sm text-gray-700 mb-4">The proposed native layer would decode or upload frames to a graphics texture. Sharing that texture with Unity requires compatible graphics contexts, synchronization and texture handling. These snippets do not establish a working zero-copy pipeline.</p>
                                  <div class="bg-gray-50 border border-gray-200 rounded-xl p-6">
-                                    <h2 class="text-xl font-bold text-gray-800 mb-4">VR Performance Comparison</h2>
+                                    <h2 class="text-xl font-bold text-gray-800 mb-4">Frame transfer alternatives (unmeasured)</h2>
                                     <div class="flex-grow flex flex-col justify-around space-y-4">
                                         <div>
                                             <div class="flex justify-between items-end mb-1">
                                                 <h3 class="font-semibold text-red-600">CPU Copy</h3>
-                                                <span class="text-lg font-bold text-red-600">~25 FPS</span>
+                                                <span class="text-lg font-bold text-gray-700">Not measured</span>
                                             </div>
-                                            <div class="w-full bg-gray-200 rounded-full h-4"><div class="bg-red-500 h-4 rounded-full" style="width: 35%"></div></div>
+                                            <p class="text-xs text-gray-600">Evaluate frame-copy cost by measurement on the target device.</p>
                                         </div>
                                         <div>
                                             <div class="flex justify-between items-end mb-1">
                                                 <h3 class="font-semibold text-green-600">Native Texture Sharing</h3>
-                                                <span class="text-lg font-bold text-green-600">72+ FPS</span>
+                                                <span class="text-lg font-bold text-gray-700">Not measured</span>
                                             </div>
-                                            <div class="w-full bg-gray-200 rounded-full h-4"><div class="bg-green-500 h-4 rounded-full" style="width: 100%"></div></div>
+                                            <p class="text-xs text-gray-600">Native-texture transfer requires graphics API and synchronization verification.</p>
                                         </div>
                                     </div>
                                 </div>
@@ -801,20 +802,20 @@ public IntPtr GetThermalTexturePtr() {
                          <p class="text-gray-600 mb-6">Choose a supported refresh rate and measure frame time, dropped frames and end-to-end latency on the target headset. Frame rate alone does not establish comfort.</p>
                          <div class="flex flex-col md:flex-row items-center justify-center gap-8">
                              <div class="relative">
-                                <div class="conic-gradient-chart"></div>
+                                <div class="w-28 h-28 rounded-full border-4 border-gray-200 bg-gray-50"></div>
                                 <div class="absolute inset-0 flex items-center justify-center">
                                     <div class="bg-gray-100 border-4 border-white w-28 h-28 rounded-full flex items-center justify-center">
-                                        <span class="text-3xl font-bold text-gray-900">72<span class="text-base font-normal ml-1">FPS</span></span>
+                                        <span class="text-base font-bold text-gray-700">Unmeasured</span>
                                     </div>
                                 </div>
                              </div>
                              <div class="space-y-3">
-                                 <h4 class="font-bold text-xl text-gray-900">Path to 72 FPS:</h4>
+                                 <h4 class="font-bold text-xl text-gray-900">Performance verification steps:</h4>
                                  <div class="text-md space-y-2 text-left text-gray-700">
-                                     <div class="flex items-center"><div class="w-4 h-4 rounded-full bg-[#10b981] mr-3"></div><span>~35 FPS (Baseline Unoptimized)</span></div>
-                                     <div class="flex items-center"><div class="w-4 h-4 rounded-full bg-[#34d399] mr-3"></div><span>+20 FPS from Fixed Foveated Rendering (FFR)</span></div>
-                                     <div class="flex items-center"><div class="w-4 h-4 rounded-full bg-[#6ee7b7] mr-3"></div><span>+10 FPS from Shader Optimization</span></div>
-                                     <div class="flex items-center"><div class="w-4 h-4 rounded-full bg-[#a7f3d0] mr-3"></div><span>+7 FPS from Static Batching & Culling</span></div>
+                                     <div class="flex items-center"><div class="w-4 h-4 rounded-full bg-[#10b981] mr-3"></div><span>Record baseline CPU/GPU frame timing</span></div>
+                                     <div class="flex items-center"><div class="w-4 h-4 rounded-full bg-[#34d399] mr-3"></div><span>Evaluate FFR only where supported</span></div>
+                                     <div class="flex items-center"><div class="w-4 h-4 rounded-full bg-[#6ee7b7] mr-3"></div><span>Measure shader and frame-transfer overhead</span></div>
+                                     <div class="flex items-center"><div class="w-4 h-4 rounded-full bg-[#a7f3d0] mr-3"></div><span>Profile batching, culling and frame pacing</span></div>
                                  </div>
                              </div>
                          </div>
