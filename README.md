@@ -114,7 +114,15 @@ This is an engineering design study and learning resource, not a verified builda
 
 Earlier thermal and ultraviolet head-mounted AR research includes Erickson et al., *Beyond Visible Light: User and Societal Impacts of Egocentric Multispectral Vision* (2021), https://doi.org/10.1007/978-3-030-77599-5_23. Quest-XSA adapts established ideas into a Quest-specific design reference; no original multispectral headset invention is claimed.
 
-UVC refers to USB Video Class, not the ultraviolet spectrum. A FLIR Lepton thermal core is not necessarily a USB-compatible camera. Hardware drivers, calibration, dual-stream operation and sensor-to-headset registration require actual experiments. A separate report remains an unpublished draft, and no DOI or peer review is claimed.
+UVC refers to USB Video Class, not the ultraviolet spectrum. A FLIR Lepton thermal core is not necessarily a USB-compatible camera. Hardware drivers, calibration, dual-stream operation and sensor-to-headset registration require actual experiments. The source design study remains unvalidated. A related research publication DOI is recorded below; a DOI does not establish independent testing or peer review.
+
+## Registered research publication
+
+- **Publication title:** Quest-XSA: Thermal and UV Sensory Augmentation for Meta Quest
+- **DOI:** [10.5281/zenodo.23538919](https://doi.org/10.5281/zenodo.23538919)
+- **Zenodo record:** https://zenodo.org/records/23538919
+- **Metadata status:** DOI-to-title association recorded in the Joe Nasr research registrar; live Zenodo record metadata has not been independently cross-checked in this audit.
+- **Evidence boundary:** The publication identifier does not validate an integrated implementation, experimental results, or peer review.
 
 ## Citation
 
