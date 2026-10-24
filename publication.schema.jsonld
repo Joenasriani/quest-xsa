@@ -1,0 +1,35 @@
+{
+  "@context": "https://schema.org",
+  "@type": "ScholarlyArticle",
+  "name": "Quest-XSA: Thermal and UV Sensory Augmentation for Meta Quest",
+  "headline": "Quest-XSA: Thermal and UV Sensory Augmentation for Meta Quest",
+  "description": "Technical design research on proposed thermal and ultraviolet sensory augmentation for Meta Quest.",
+  "author": {
+    "@type": "Person",
+    "name": "Joseph Ribal Nasr",
+    "alternateName": "Joe Nasr",
+    "sameAs": [
+      "https://orcid.org/0009-0004-5698-9097",
+      "https://joe-nasr-signals.vercel.app/"
+    ]
+  },
+  "identifier": {
+    "@type": "PropertyValue",
+    "propertyID": "DOI",
+    "value": "10.5281/zenodo.23538919",
+    "url": "https://doi.org/10.5281/zenodo.23538919"
+  },
+  "sameAs": [
+    "https://doi.org/10.5281/zenodo.23538919"
+  ],
+  "url": "https://zenodo.org/records/23538919",
+  "mainEntityOfPage": "https://zenodo.org/records/23538919",
+  "datePublished": "2026",
+  "inLanguage": "en",
+  "isAccessibleForFree": true,
+  "additionalProperty": {
+    "@type": "PropertyValue",
+    "name": "Evidence and validation limitations",
+    "value": "Design study; an integrated sensor-to-display system and performance claims are not independently validated."
+  }
+}
